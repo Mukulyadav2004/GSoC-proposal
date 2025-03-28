@@ -22,10 +22,14 @@
 - About Me
 - Contact Info
 - Affiliation
+- My motivation
+- Scheduled conflicts
 - Mentors
 - Coding Plan And Methods
 - Timeline
-- Code
+- Management of coding project
+- Test
+- Miscellaneous
 
 ## Project title
 **Enhancing Data.Table: Enhancing Functionality, and Ensuring Quality**
@@ -65,14 +69,6 @@ I am excited about the opportunity to contribute further to the data.table proje
 - Stage of completion: 2ND YEAR
 - Contact to verify: mukulkumar_230467@aitpune.edu.in (email address given by college)
 
-## Mentors
-- Evaluating mentor name and email: TOBY DYLAN HOCKING, toby.hocking@r-project.org
-- Co-mentor name(s) and email(s): JOSHUA WU, joshuawu2004@gmail.com
-
-**Have you been in touch with the mentors? When and how?**
-
-Yes, I have been in touch with my mentor, Joshua Wu, even before I began contributing. I reached out to him via email, seeking his guidance. His valuable advice greatly helped me get started with this package.
-
 ## MY MOTIVATION
 
 I'm confident I'd be a valuable contributor to this project. I'm passionate about learning and have hands-on experience, and I'm genuinely curious about how complex systems work. Since February 2025, I've been contributing to data.table, and each pull request feels like a rewarding challenge. Fixing issues and improving documentation has deepened my understanding of its internals, from efficient data handling to clever C-level optimizations.
@@ -89,6 +85,15 @@ I am fully prepared to dedicate myself to the R GSoC project over the summer, tr
 
 With no external distractions, I am confident in my ability to contribute meaningfully, collaborate effectively with mentors and the community, and ensure steady progress. I am committed to maintaining a high standard of work and delivering quality results within the expected timelines.
 
+## Mentors
+- Evaluating mentor name and email: TOBY DYLAN HOCKING, toby.hocking@r-project.org
+- Co-mentor name(s) and email(s): JOSHUA WU, joshuawu2004@gmail.com
+
+**Have you been in touch with the mentors? When and how?**
+
+Yes, I have been in touch with my mentor, Joshua Wu, even before I began contributing. I reached out to him via email, seeking his guidance. His valuable advice greatly helped me get started with this package.
+
+### CODING PLANS AND METHODS
 ## Making data.table Even Better
 
 ### About my project 
@@ -479,19 +484,6 @@ This plan outlines how I'll spend my summer improving data.table. It's designed 
 
 ### Phase 2: Coding (June - August)
 
-Google Summer of Code: data.table Project Timeline
-This timeline details my plan for contributing to data.table during GSoC. The project will address a range of issues, from user requests to documentation improvements, ensuring a valuable contribution.
-
-#### Getting Ready:
-- I'll become very familiar with the data.table code.
-- The issues I'll be working on will be studied carefully.
-- I'll set up my coding environment and ensure Git is working well.
-
-#### Early Contributions:
-- I'll start working on small tasks or discussions related to the issues.
-- I'll begin talking with my mentors about my plans.
-- The data.table way of contributing code will be learned.
-
 #### Week 1: 1st June to 7th June:
 - Regarding #1636, add a thousands argument in R/fread.R, validate it, and pass to C. Extend key structs in C to store this parameter.
 - Create a reusable buffer for each thread to strip thousand separators.
@@ -608,9 +600,10 @@ The proposed improvements will directly impact the data.table community by:
 
 The desired outcome is to position data.table as an even more powerful and efficient tool within the R ecosystem, building upon its already strong foundation. The project's success will be measured by improved performance, reduced user friction, and increased community engagement.
 
-### My Contributions So Far
+### TEST
+### For test qualification , there we have to merege 1 pr , so below are my Contributions So Far
 
-I've already made several contributions to data.table, with four pull requests successfully merged. I'm also actively working on other improvements. Here's a quick overview of each merged pull request:
+I've already made several contributions to data.table, with four pull requests successfully merged. I'm also actively working on other improvements, one is ready to review an dworking on others. Here's a quick overview of each merged pull request:
 
 #### PR #6816: Fixes Index Printing
 
@@ -677,6 +670,7 @@ Thank you for your consideration.
 Sincerely,
 Mukul
 
+### Miscellaneous
 ## Questions for me:
 This section is voluntary reading:
 
@@ -688,6 +682,7 @@ I would really love to be a part of a package that can enhance the data manipula
 ### Do you consider yourself fit for the project?
 Absolutely. I'm genuinely enthusiastic about contributing to the data.table package, and I believe my skills and dedication align perfectly with the project's goals. The prospect of enhancing a tool that significantly impacts the efficiency of countless R users is incredibly motivating.
 My deep dive into the data.table codebase, coupled with my thorough research into the specific GitHub issues ([#1636, #6036, #5034, etc.]), has given me a solid understanding of the challenges and potential solutions. I'm committed to delivering well-tested, documented, and maintainable code that seamlessly integrates with the existing package.
+
 Furthermore, my proactive approach to learning the data.table development workflow, setting up a robust development environment, and establishing clear communication channels with mentors will ensure a smooth and productive GSoC experience. I understand the importance of clear communication, and I'm ready to ask for feedback, and help, when needed.
 While my experience with large open-source projects is still developing, my consistent work on personal and academic projects has solidified my Git and GitHub proficiency. I am comfortable with collaborative development, and I am ready to adhere to the data.table contribution guidelines.
 I am confident that my passion for efficient code, my dedication to thorough research and testing, and my commitment to clear communication will allow me to make valuable contributions to the data.table project. I'm eager to learn from the experienced maintainers and contribute to a project that benefits the R community worldwide.
