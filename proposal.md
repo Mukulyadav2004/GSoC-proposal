@@ -44,8 +44,6 @@ I have successfully merged 4 pull requests that addressed key issues such as fix
 
 Currently, I am working on resolving an issue involving print.data.table() where both a key and an index are set. This task requires debugging low-level C code and optimizing type coercion to maintain high performance. It has given me the opportunity to dive deeper into the internals of data.table and refine my skills in C programming and performance optimization.
 
-I have also contributed to refactoring legacy code, improving maintainability, and updating documentation. In addition, I have written unit tests to cover edge cases and ensure system stability. This work has improved the robustness of the codebase and provided me with valuable insights into writing clean, efficient, and maintainable code.
-
 My proficiency in R, Python, C, and Java has enabled me to work on multiple projects and strengthen my knowledge of algorithms, data structures, and system optimization. One of my notable projects involved a data analysis task in R, where I analyzed large datasets related to customer behavior, identified patterns, and generated actionable insights. This project involved data cleaning, visualization using ggplot2, and implementing statistical models to improve decision-making processes.
 
 I also serve as the Project Head of the Research and Development Club at my college, where I have successfully organized and managed large-scale events such as Fusion (intra-college event) and Avishkar (inter-college event). These experiences have enhanced my project management, communication, and problem-solving skills, helping me effectively balance technical expertise with leadership responsibilities.
@@ -191,13 +189,13 @@ Example code snippets to illustrate approach:
 #define DATA_TABLE_FREAD_H
 
 typedef struct {
-  char thousands_sep;      // Thousands separator
-  // ... other global fields
+  char thousands_sep;      // declare thousands separator
+  // ... other global field
 } FreadGlobalArgs;
 
 typedef struct {
   char *buffer;            // Reusable buffer for stripping separators
-  size_t buffer_size;      // Current capacity of the buffer
+  size_t buffer_size;      // here it is current capacity of buffer
   // ... other thread-local fields
 } FreadThreadLocal;
 #endif
@@ -375,8 +373,8 @@ When fread() reads a gzipped file larger than the available temporary storage, i
 # Current behavior (risky):
 
 ```r
-dt <- fread("huge_file.gz")  # Warning: "File is truncated"
-sum(dt$value)  # Returns incorrect result with no obvious error
+dt <- fread("huge_file.gz")  # here warning: "File is truncated"
+sum(dt$value)  # It returns incorrect result with no obvious error
 ```
 
 This is important because as in automated setups like cron jobs or cloud pipelines, it's easy to miss warnings. This can make debugging much harder, as errors often show up much later and far away from where the problem actually started. Additionally, partial data isn’t very useful as most don’t want a random selection of rows that happen to fit into temporary storage.
