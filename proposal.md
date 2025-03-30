@@ -111,7 +111,7 @@ Here's a breakdown of the specific areas I'll be focusing on:
 
 | **Focus**                | **Issues**                                            | **Description**                                                                                                                |
 |--------------------------|-------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| **Top User Request**     | [#1636]                                              | Will dedicate about two weeks to address the most requested fix in the community.                                             |
+| **Top User Request**     | [#1636]                                              | Add a feature in fread to support thousand operator                                             |
 | **Beginner's Tasks**     | [#6219], [#6641], [#4259], [#6702], [#5829], [#5609], [#5034] | Smaller tasks that help build familiarity with the codebase and resolve common issues new contributors can start with.        |
 | **Making Things Better** | [#6036], [#5034], [#5913]                            | Enhancements aimed at improving existing functionalities of data.table.                                                       |
 | **New Features**         | [#6341], [#5415]                                     | Requests for additional capabilities that users want, expanding data.table’s toolset.                                         |
@@ -122,22 +122,18 @@ Here's a breakdown of the specific areas I'll be focusing on:
 Here's my plan for tackling these goals:
 
 #### 1. Understanding the Problems:
-- First thing to do is reproduce the issue if it is a bug or something on my machine.
-- Carefully read through each of the chosen issues on GitHub to fully understand what the problem is, what users expect, and if anyone has already discussed potential solutions.
-- Group the issues based on how complex they are and how much impact they have.
+- First thing to do is reproduce the issue if its a bug or something and carefully read through each of the chosen issues to fully understand the problem .
 - Look at the specific parts of the data.table code (both the main R code and the faster C code) that are related to each issue.
 - Also check past discussions and changes to the code to understand the history.
 
 #### 2. Figuring Out Solutions:
 - For the more complicated issues, come up with a few different ways to solve them and discuss these approaches with the mentors.
 - Think about how each solution might affect the speed, how easy it will be to maintain the code, whether it will still work with older versions of data.table, and if it fits with how data.table is generally designed.
-- Learn to use a tool called microbenchmark to test how fast different solutions are on real-world data.
 - Write a short report comparing the good and bad points of each solution to help the mentors and me decide on the best approach.
   
 #### 3. Making the Changes:
 - Start by working on the most important issue first.
-- Write the code to fix the issues and add the new features, making sure it follows the existing style of the data.table code.
-- Double-check that my changes don't break anything.
+- Write the code to fix the issues and add the new features, making sure it follows the existing style of the data.table code and ensure my changs doesn't break anything.
 - Share my code changes regularly on GitHub so the mentors can give me feedback and I can make improvements.
 
 #### 4. Improving the Help Guides:
