@@ -81,7 +81,7 @@ I'm also excited about the challenge of working on a large and complex codebase 
 
 ## SCHEDULED CONFLICTS
 
-I am fully prepared to dedicate myself to the R GSoC project over the summer, treating it as a full-time responsibility. I have no internships, academic obligations, or personal commitments that could interfere with my ability to focus on the project. This allows me to allocate my complete attention and effort toward achieving the project's objectives. I will communicate any significant upcoming events, such as exams, in advance and will strive to maintain consistent contributions even during those periods.
+I am fully prepared to dedicate myself to the R GSoC project over the summer, treating it as a full-time responsibility. I will communicate any significant upcoming events, such as exams, in advance and will strive to maintain consistent contributions even during those periods.
 
 With no external distractions, I am confident in my ability to contribute meaningfully, collaborate effectively with mentors and the community, and ensure steady progress. I am committed to maintaining a high standard of work and delivering quality results within the expected timelines.
 
