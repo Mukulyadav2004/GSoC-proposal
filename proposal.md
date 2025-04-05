@@ -285,7 +285,7 @@ Simulated results for 1M rows:
 [My GitHub Repository](https://github.com/Mukulyadav2004/fread-sep2-benchmarks)
 
 #### Visualizing the Logic (Flowchart)
-<img src="/images/sep2_implementation.png" width="250" height="100" alt="Flowchart">
+<img src="/images/sep2_implementation.png" width="350" height="350" alt="Flowchart">
 
 ## 5. Implementation Plan
 
@@ -377,7 +377,7 @@ fread <- function(..., truncate.error = TRUE) {
 - Add a note in `NEWS.md` about this improvement.
 
 Here is a flowchart for clarity:
-<img src="/images/truncate_error.png" width="250" height="100" alt="Flowchart">
+<img src="/images/truncate_error.png" width="350" height="350" alt="Flowchart">
 
 #### Why This Approach Feels Right
 It's robust because it captures the actual failure signal from the decompression tool. It doesn't rely on guesswork about file sizes and carries minimal overhead. Most importantly, it prevents cryptic downstream errors by clearly signaling when data is incomplete, helping users quickly diagnose storage or corruption issues.
@@ -430,7 +430,7 @@ if (ncols_rem > 0L) {
 - **Robust:** Works whether there is one hidden column, very long column names, or minimal console width.
 
 #### Visualizing the Logic (Flowchart)
-<img src="/images/truncate_cols.png" width="250" height="100" alt="Flowchart">
+<img src="/images/truncate_cols.png" width="350" height="350" alt="Flowchart">
 
 ### Testing Plan
 - **Unit Tests:** Verify output under varying widths, column counts, and name lengths.  
