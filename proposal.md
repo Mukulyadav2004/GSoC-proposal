@@ -285,7 +285,7 @@ Simulated results for 1M rows:
 [My GitHub Repository](https://github.com/Mukulyadav2004/fread-sep2-benchmarks)
 
 #### Visualizing the Logic (Flowchart)
-<img src="/images/sep2_implementation.png" width="350" height="350" alt="Flowchart">
+<img src="/images/sep2_implementation.png" width="350" height="400" alt="Flowchart">
 
 ## 5. Implementation Plan
 
@@ -430,7 +430,7 @@ if (ncols_rem > 0L) {
 - **Robust:** Works whether there is one hidden column, very long column names, or minimal console width.
 
 #### Visualizing the Logic (Flowchart)
-<img src="/images/truncate_cols.png" width="350" height="350" alt="Flowchart">
+<img src="/images/truncate_cols.png" width="350" height="400" alt="Flowchart">
 
 ### Testing Plan
 - **Unit Tests:** Verify output under varying widths, column counts, and name lengths.  
