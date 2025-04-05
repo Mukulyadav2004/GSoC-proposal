@@ -1,6 +1,6 @@
 # R PROJECT FOR STATISTICAL COMPUTING
 
-## DATE.TABLE
+## data.table
 #### By Mukul Kumar
 
 ## PROJECT MENTORS
@@ -63,11 +63,11 @@ You can check my project here: [GitHub link](https://github.com/Mukulyadav2004/f
 - Contact to verify: mukulkumar_230467@aitpune.edu.in (email address given by college)
 
 
-  ## SCHEDULED CONFLICTS
+## SCHEDULED CONFLICTS
 
-  I am fully prepared to dedicate myself to the R GSoC project over the summer, treating it as a full-time responsibility. I will communicate any significant upcoming events, such as exams, in advance and will strive to maintain consistent contributions even during those periods.
+I am fully prepared to dedicate myself to the R GSoC project over the summer, treating it as a full-time responsibility. I will communicate any significant upcoming events, such as exams, in advance and will strive to maintain consistent contributions even during those periods.
 
-  With no external distractions, I am confident in my ability to contribute meaningfully, collaborate effectively with mentors and the community, and ensure steady progress. I am committed to maintaining a high standard of work and delivering quality results within the expected timelines.
+With no external distractions, I am confident in my ability to contribute meaningfully, collaborate effectively with mentors and the community, and ensure steady progress. I am committed to maintaining a high standard of work and delivering quality results within the expected timelines.
 
 ## Mentors
 - Evaluating mentor name and email: TOBY DYLAN HOCKING, toby.hocking@r-project.org
@@ -268,7 +268,7 @@ fread <- function(..., sep2 = NULL, sep2cols = NULL) {
 | **Approach 3: Hybrid(My solution)** | Use `fread`'s native import for primary parsing, then apply optimized `tstrsplit` on selected columns while preserving memory efficiency via in-place column replacement. | - Balances R-level efficiency with C-like speed.<br>- Avoids modifying `fread`'s C code.<br>- Efficient memory usage. | - Some performance trade-offs compared to full C implementation. |
 
 ### Key Advantages
-- **Speed:** 2× faster than manual post-processing (benchmark below)
+- **Speed:** 40 % faster than manual post-processing (benchmark below)
 - **Safety:** No changes to fread's C core (avoids regression risks)
 - **Usability:** Single-step workflow preserves user experience
 
@@ -288,29 +288,12 @@ Simulated results for 1M rows:
 #### Visualizing the Logic (Flowchart)
 <img src="/images/sep2_implementation.png" width="350" height="400" alt="Flowchart">
 
-## 5. Implementation Plan
-
-### Phase 1: Core Logic (1 Weeks)
-- Add sep2 and sep2cols parameters to fread
-- Implement validation checks (e.g., sep2 ≠ sep)
-- Develop column splitting with tstrsplit
-
-### Phase 2: Edge Cases (1.5 Weeks)
-- Handle empty fields ("A;;C" → c("A", "", "C"))
-- Preserve column types (numeric → split → numeric)
-- Add 20+ unit tests (variable splits, quotes, missing values)
-
-### Phase 3: Documentation (1 Week)
-- Update ?fread with sep2 examples
-- Write vignette: "Importing Nested Data in One Step"
-
-
-## 6. Impact
+### 5. Impact
 - **User Benefit:** Eliminates post-processing code for nested data
 - **Performance:** Reduces memory usage by 40% compared to manual splitting
 - **Consistency:** Aligns with data.table's "fast and simple" philosophy
 
-## 7. Conclusion
+### 6. Conclusion
 This proposal merges speed (via tstrsplit's C backend) with simplicity (no C code changes) to solve a common data-ingestion pain point. By focusing on R-level optimizations, it balances innovation with maintainability
 
 
@@ -325,8 +308,8 @@ When reading large gzipped files with data.table::fread, temporary storage limit
 
 | **Approach**                         | **Mechanism**                                                          | **Pros & Cons**                                                                 |
 |--------------------------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| **Post-Decompression File Check**    | After decompression, compare actual vs. expected file sizes. Errors if the size is below a threshold. | 🔴 **Limitations**: Estimating uncompressed size is unreliable. Fails if decompression exits before writing (e.g., no space). |
-| **C-Level Exit Status Check**        | Check the exit status of the decompression command (e.g., `gunzip`) in C code. Error on non-zero exit. | ✅ **Strengths**: Directly detects command failures (e.g., disk full, corruption). Minimal overhead. |
+| **Post-Decompression File Check**    | After decompression, compare actual vs. expected file sizes. Errors if the size is below a threshold. |  **Limitations**: Estimating uncompressed size is unreliable. Fails if decompression exits before writing (e.g., no space). |
+| **C-Level Exit Status Check**        | Check the exit status of the decompression command (e.g., `gunzip`) in C code. Error on non-zero exit. |  **Strengths**: Directly detects command failures (e.g., disk full, corruption). Minimal overhead. |
 
 ### Chosen Plan: C-Level Exit Status Check
 
@@ -377,7 +360,7 @@ fread <- function(..., truncate.error = TRUE) {
 - Update `?fread` to explain `truncate.error`.  
 - Add a note in `NEWS.md` about this improvement.
 
-Here is a flowchart for clarity:
+#### Here is a flowchart for clarity:
 <img src="/images/truncate_error.png" width="350" height="350" alt="Flowchart">
 
 #### Why This Approach Feels Right
@@ -443,7 +426,7 @@ if (ncols_rem > 0L) {
 This enhancement aligns data.table’s print output with user expectations, bolstering its utility in pipelines requiring strict formatting (e.g., Bioconductor). It demonstrates data.table’s commitment to polish and extensibility.
 
 
-# Issue Addressed: first()/last() Unexpectedly Drop Vector Names (Issue #2487)
+## Issue Addressed: first()/last() Unexpectedly Drop Vector Names (Issue #2487)
 
 ### The Core Problem
 When you use `first(my_vector)` or `last(my_vector)` on a vector that has names (e.g., `c(A=1, B=2)`), the function returns just the value (`1`) and forgets the name (`A`). 
@@ -489,114 +472,109 @@ This ensures data.table users understand exactly how `first()` and `last()` hand
 
 ### Phase 1: Foundation Building and Core Feature Implementation (Weeks 1–6)
 
-#### Week 0: Community Bonding Period (Before official coding starts)
+### Week 0: Community Bonding Period (Before official coding starts)
 **Objective:** Integrate with the data.table community and finalize project scope.  
 **Activities:**  
-- Engage with mentors to refine the project plan, discuss implementation strategies for key issues (especially #1162), and clarify expectations.    
-- Set up the complete local development environment, including R development tools and C compilation toolchain if necessary.  
+- Engage with mentors to refine the project plan, discuss implementation strategies for key issues (especially #1162), and clarify expectations.      
 - Begin exploring the source code relevant to the initial set of documentation/simpler issues.  
 - Actively follow discussions on GitHub issues and stackoverfolw(if needed) to understand ongoing development and community priorities.
 
-#### Week 1–2: Documentation and Initial Consistency Fixes
+### Week 1–2: Documentation and Initial Consistency Fixes
 **Objective:** Make initial contributions, focusing on documentation and straightforward fixes to understand workflow better.
 
-##### Week 1 Activities:
+#### Week 1 Activities:
 - Tackle initial documentation issues:  
   - Clarify merge() error message prefixes (#6641).  
   - Improve error reporting for := with closures/functions (#5829).  
   - Document first() behavior vs. x[1] (#2487, #2002).  
   - Analyze and implement fix for wrapping truncated column names in print() (#5034).  
-- Submit initial Pull Requests (PRs) for these issues, carefully following contribution guidelines.  
+- Submit initial Pull Requests (PRs) for these issues.
 - Start analyzing code related to IDate/POSIXlt (#4259).
 
-##### Week 2 Activities:
+### Week 2 Activities:
 - Address feedback on initial PRs and refine implementations.  
 - Continue with documentation tasks:  
   - Document setindex vs. setkey differences (#5321 - Part 1).  
   - Document env argument usage (#5321 - Part 2).  
   - Update list of data.table options (#6720).  
-- Implement IDate/POSIXlt method (#4259) and associated tests.  
-- Begin deep dive into fread's architecture and C code in preparation for #1162 (sep2).  
+- Implement IDate/POSIXlt method (#4259) and associated tests.   
 - Submit PRs for completed tasks.
 
-#### Week 3–5: Major Feature Implementation (fread sep2 – #1162)
+### Week 3–5: Major Feature Implementation (fread sep2 – #1162)
 **Objective:** Implement the highly requested sep2 functionality in fread. This is expected to be the most complex task.
 
-##### Week 3 Activities:
+### Week 3 Activities:
 - Focus on understanding the relevant C code paths within fread responsible for field separation.  
-- Develop an initial design/approach for incorporating sep2 logic. Discuss with mentors.  
-- Begin implementing the core logic for handling sep2 in C, considering various edge cases (e.g., quoted fields, empty fields, interaction with existing parameters).  
-- Start developing basic test cases for sep2.
+- Discuss initial approach with mentors for incorporating sep2 logic.   
+- Begin implementing the core logic for handling sep2 in C, considering various edge cases as well start developing basic test cases for sep2.
 
-##### Week 4 Activities:
+### Week 4 Activities:
 - Continue C implementation for sep2, focusing on robustness and efficiency.  
-- Implement the R wrapper/interface changes in fread() to accept and handle the new sep2 argument.  
+- Implement the R wrapper changes in fread() to accept and handle the new sep2 argument.  
 - Expand test coverage significantly, including various combinations of separators, quotes, file types, and potential conflicts.  
 - Address any feedback received on PRs from Weeks 1–2.
+- Prepare and submit a comprehensive PR for #1162.
 
-##### Week 5 Activities:
+### Week 5 Activities:
 - Refine sep2 implementation based on testing and potential initial feedback.  
 - Write clear documentation for the new sep2 parameter, including examples of its usage.  
 - Ensure all tests (including existing fread tests) pass with the changes.  
-- Prepare and submit a comprehensive PR for #1162.
 
-##### Week 6: Prepare for Phase 1 Evaluation
+### Week 6: Prepare for Phase 1 Evaluation
 **Objective:** Consolidate work, address feedback, and ensure readiness for evaluation.  
 **Activities:**  
 - Actively monitor and respond to feedback on the sep2 PR (#1162) and any outstanding PRs.  
 - Make necessary revisions based on mentor reviews.  
-- Ensure all submitted code is well-documented and includes thorough tests.  
-- Clean up local branches and prepare a summary of progress for the evaluation.  
+- Ensure all submitted code is well-documented and includes thorough tests and prepare a summary of progress for the evaluation.   
 - Begin preliminary analysis of issues planned for Phase 2.
 
 --- End of Phase 1 Evaluation ---
 
 ### Phase 2: Enhancements, Bug Fixes, and Finalization (Weeks 7–12)
 
-#### Week 7–8: Implementing Enhancements and Feature Requests
+### Week 7–8: Implementing Enhancements and Feature Requests
 **Objective:** Tackle key enhancement and feature request issues.
 
-##### Week 7 Activities:
+#### Week 7 Activities:
 - Implement changes based on Phase 1 evaluation feedback.  
 - Implement flatten argument for shift() (#6036) + tests & docs.  
 - Implement rev parameter for tstrsplit() (#6341) + tests & docs.  
 - Analyze and start implementing classed condition support in stopf() (#5913).  
 - Submit PRs for completed items.
 
-##### Week 8 Activities:
-- Complete implementation and testing for classed conditions (#5913).  
+### Week 8 Activities:
+- Start implementation and testing of classed conditions (#5913).  
 - Implement fread error behavior change for gzip storage limit (#5415) + tests & docs.  
 - Address bug regarding RHS object name matching column name (#5609) + tests.  
 - Begin investigating potential refactoring for setDT/:= (#6702), assess feasibility and discuss approach with mentors.  
 - Submit PRs.
 
-#### Week 9–10: Consistency, Bug Fixes, and Further Enhancements
+### Week 9–10: Consistency, Bug Fixes, and Further Enhancements
 **Objective:** Address remaining consistency issues, bugs, and potentially start internal refactoring.
 
-##### Week 9 Activities:
+### Week 9 Activities:
+- Address feedback on PRs submitted in Weeks 7–8. 
 - Ensure function names are preserved when using by (#6219) + tests & docs.  
 - Address printing issue with rvar columns (#5981) + tests. 
-- Improve knitr caching for := (#904) + tests/examples.  
-- Address feedback on PRs submitted in Weeks 7–8.  
-- If #6702 (refactoring) is deemed feasible and valuable, begin implementation. Otherwise, pick up another lower-priority issue or focus on extensive testing/documentation.
+- Improve knitr caching for := (#904) + tests/examples.   
 
-##### Week 10 Activities:
-- Continue work on #6702 (if applicable) or focus on refining existing contributions.  
+### Week 10 Activities:
+- Staert working on #6702.  
 - Enhance website build checks with md-lint for vignette links (#6638).  
 - Conduct thorough regression testing across all contributions made so far.  
 - Review and improve documentation for all implemented features and fixes based on self-review and potential early feedback.  
 - Submit any remaining PRs.
 
-#### Week 11–12: Final Testing, Documentation, and Project Wrap-up
+### Week 11–12: Final Testing, Documentation, and Project Wrap-up
 **Objective:** Ensure all contributions are robust, well-documented, and integrated smoothly. Prepare for final submission.
 
-##### Week 11 Activities:
+### Week 11 Activities:
 - Perform comprehensive testing on all submitted PRs, considering edge cases and interactions between different features.  
 - Respond promptly to any final feedback from mentors on PRs.  
 - Finalize all code comments and documentation strings.   
 - Ensure all tests pass reliably on different R versions.
 
-##### Week 12 Activities:
+### Week 12 Activities:
 - Final code cleanup and polishing based on best practices.  
 - Ensure all PRs are merged or in a final reviewable state.  
 - Write the final project report summarizing work done, challenges, and learnings.  
@@ -604,12 +582,12 @@ This ensures data.table users understand exactly how `first()` and `last()` hand
 
 --- End of Phase 2 Evaluation ---
 
-### Final Week: Submission Period
+## Final Week: Submission Period
 -  Prepare the final submission space for GSoC, including code, documentation, and a comprehensive report detailing the project's development process, challenges faced, and how they were overcome. Submit the project for final evaluation.
 
 ## My contingency plan
 - **Early Communication & Collaborative Adjustment:**  My first step when facing delays or unexpected challenges will be proactive communication with my mentors. We can then collaboratively assess the situation and adjust priorities or timelines, possibly re-scoping lower-priority tasks if necessary to ensure focus on the most critical goals.
-- **Efficient Problem Solving:** While I'll strive to resolve technical hurdles independently first, I plan to efficiently seek targeted guidance from mentors or the community if I get stuck, preventing prolonged delays on specific blocking issues.
+- **Efficient Problem Solving:** While I'll strive to resolve technical hurdles independently first, I plan to efficiently seek targeted guidance from mentors and community if I get stuck, preventing prolonged delays on specific blocking issues.
 - **Timeline Adaptability & Buffer:**  The proposed timeline includes dedicated periods for testing and refinement (especially Weeks 11-12), providing some inherent flexibility. I am prepared to adapt the plan, focusing effort where it delivers the most value if unforeseen circumstances impact the original schedule.
 
 ## My commitements
@@ -712,9 +690,9 @@ data.table(t = c(3:1,4:5), y = 1:5) %>% as.data.table(key = "t") %>% key() # "t"
 
 ## Self-Recommendation :
 
-**Direct Contribution Experience:** Actively contributing to data.table since February with 4 merged PRs (spanning bug fixes, error messages, documentation), giving me hands-on experience with the codebase, C-level optimizations, R internals, workflow, and testing requirements.
-**Technical Alignment & Proactive Preparation:** My R and C skills and focus on performance directly match data.table's core strengths. I have studied the proposed issues in detail and proactively prepared by benchmarking the key sep2 feature central to my proposal.
-**Project Enthusiasm & Community Engagement:** I am genuinely motivated by data.table's significant impact on efficient data analysis in the R community and excited to enhance this widely-used tool. My positive interactions with the helpful maintainers reinforce my desire to learn, collaborate effectively, and contribute high-quality code.
+- **Direct Contribution Experience:** Actively contributing to data.table since February with 4 merged PRs (spanning bug fixes, error messages, documentation), giving me hands-on experience with the codebase, C-level optimizations, R internals, workflow, and testing requirements.
+- **Technical Alignment & Proactive Preparation:** My R and C skills and focus on performance directly match data.table's core strengths. I have studied the proposed issues in detail and proactively prepared by benchmarking the key sep2 feature central to my proposal.
+- **Project Enthusiasm & Community Engagement:** I am genuinely motivated by data.table's significant impact on efficient data analysis in the R community and excited to enhance this widely-used tool. My positive interactions with the helpful maintainers reinforce my desire to learn, collaborate effectively, and contribute high-quality code.
 
 
 ## Acknowledgements
@@ -730,5 +708,7 @@ I would like to express my sincere gratitude to the data.table maintainers and c
 
 Their expertise has been instrumental in my learning process.
 Thank you for considering my proposal.
+
 Sincerely,
+
 Mukul
