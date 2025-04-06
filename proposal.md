@@ -48,7 +48,7 @@ You can check my project here: [GitHub link](https://github.com/Mukulyadav2004/f
 
 
 ## Contact Information
-- Github: Mukulyadav2004
+- Github: [Mukulyadav2004](https://github.com/Mukulyadav2004)
 - Name: MUKUL KUMAR
 - Postal address: ARMY INSTITUTE OF TECHNOLOGY, PUNE, MAHARASHTRA, 411015 
 - Mobile: +91 8708206446
@@ -261,7 +261,7 @@ fread <- function(..., sep2 = NULL, sep2cols = NULL) {
 
 | Approach | Description | Pros | Cons |
 |----------|------------|------|------|
-| **Approach 1: C-Level Integration** | Modify `fread`'s C parser to split columns during file reading. | - Maximum performance. | - High complexity for a new contributor (requires familiarity with C codebase).<br>- Risk of breaking existing optimizations.<br>- Longer development and testing cycle. |
+| **Approach 1: C-Level Integration** | Modify `fread`'s C parser to split columns during file reading. | - Maximum performance. | - Risk of breaking existing optimizations.<br>- Longer development and testing cycle. |
 | **Approach 2: Post-Processing** | Split columns after import using R-level `tstrsplit`. | - Simpler implementation.<br>- No C code changes required. | - Potential performance overhead.<br>- Limited handling of quoted fields. |
 | **Approach 3: Hybrid(My solution)** | Use `fread`'s native import for primary parsing, then apply optimized `tstrsplit` on selected columns while preserving memory efficiency via in-place column replacement. | - Balances R-level efficiency with C-like speed.<br>- Avoids modifying `fread`'s C code.<br>- Efficient memory usage. | - Some performance trade-offs compared to full C implementation. |
 
@@ -280,8 +280,7 @@ Simulated results for 1M rows:
 | Manual tstrsplit | 1.8 | 2.1 |
 | Hybrid sep2 | 0.9 | 1.2 |
 
-*Full benchmarking code and results are available at github.com/Mukulyadav2004/fread-sep2-benchmarks, demonstrating speed gain as well memory reduction over manual splitting for 1M rows*
-[My GitHub Repository](https://github.com/Mukulyadav2004/fread-sep2-benchmarks)
+*Full benchmarking code and results are available at [My GitHub Repository](https://github.com/Mukulyadav2004/fread-sep2-benchmarks), demonstrating speed gain as well memory reduction over manual splitting for 1M rows*
 
 #### Visualizing the Logic (Flowchart)
 <img src="/images/sep2_implementation.png" width="350" height="400" alt="Flowchart">
