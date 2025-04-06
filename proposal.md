@@ -167,8 +167,13 @@ I plan a structured approach focused on quality and collaboration:
 **Preventing Regressions & Side Effects:** Ensuring that changes made to address one issue do not unintentionally break other functionality elsewhere in the package. 
 - **Mitigation:** Comprehensive local testing covering the full test suite, submitting small changes via PRs, and relying on thorough code review.
 
+<<<<<<< HEAD
 **Accurate Time Estimation & Adaptation:** Realistically estimating the effort for complex tasks and effectively managing the schedule, especially if unforeseen difficulties arise.
 - **Mitigation:** Breaking down large tasks, tracking progress closely, and communicating proactively with mentors to adjust plans if needed, as outlined in the contingency plan.
+=======
+**Accurate Time Estimation & Adaptation:** Realistically estimating the effort for complex tasks and effectively managing the schedule, especially if unforeseen difficulties arise. 
+**Mitigation:** Breaking down large tasks, tracking progress closely, and communicating proactively with mentors to adjust plans if needed, as outlined in the contingency plan.
+>>>>>>> 601bd31e71845099dc9e882abba537ffdba4bd04
 
 
 #### To outline my approach to resolving issues, I have developed a well-structured plan that addresses each category, including the top user requests, enhancements, feature requests, and documentation improvements.
