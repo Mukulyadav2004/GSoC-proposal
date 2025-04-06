@@ -22,8 +22,6 @@
 - Timeline
 - Management of coding project
 - Test
-- Self recommendation
-- Acknowlegement
 
 ## Project title
 **Enhancing Data.Table: Enhancing Functionality, and Ensuring Quality**
@@ -53,7 +51,7 @@ You can check my project here: [GitHub link](https://github.com/Mukulyadav2004/f
 - Github: Mukulyadav2004
 - Name: MUKUL KUMAR
 - Postal address: ARMY INSTITUTE OF TECHNOLOGY, PUNE, MAHARASHTRA, 411015 
-- Telephone: +91 8708206446
+- Mobile: +91 8708206446
 - Email(s): mukulyadav6446@gmail.com (primary), mukulkumar_230467@aitpune.edu.in (secondary)
 
 ## Affiliation
@@ -97,43 +95,43 @@ I've grouped the issues I plan to address into three main categories:
 This group focuses on adding new features and enhancing existing functions to make data.table even more powerful and versatile for data manipulation tasks.
 
 **fread Enhancements:**
-- #1162 : Implement the popular sep2 feature to provide more flexibility when reading files with potentially irregular separator patterns.
-- #5415 : Improve robustness by making fread raise an error (instead of just a warning) when a gzipped file decompression exceeds available temporary storage, preventing unexpected behavior downstream.
+- [#1162](https://github.com/Rdatatable/data.table/issues/1162) : Implement the popular sep2 feature to provide more flexibility when reading files with potentially irregular separator patterns.
+- [#5415](https://github.com/Rdatatable/data.table/issues/5415) : Improve robustness by making fread raise an error (instead of just a warning) when a gzipped file decompression exceeds available temporary storage, preventing unexpected behavior downstream.
 
 **New Function Arguments:**
-- #6036 : Add a flatten argument to shift(), giving users control over the output structure when shifting list columns.
-- #6341 : Introduce a rev parameter to tstrsplit(), enabling more intuitive selection of elements from the end when splitting strings.
+- [#6036](https://github.com/Rdatatable/data.table/issues/6036) : Add a flatten argument to shift(), giving users control over the output structure when shifting list columns.
+- [#6341](https://github.com/Rdatatable/data.table/issues/6341) : Introduce a rev parameter to tstrsplit(), enabling more intuitive selection of elements from the end when splitting strings.
 
 **Internal Improvements:**
-- #5913 : Add support for classed conditions in internal messaging functions like stopf(), allowing for more structured error handling within the package.
-- I#6702 : Refactor setDT and := to consolidate code related to assigning data.table objects, potentially improving maintainability and consistency.
+- [#5913](https://github.com/Rdatatable/data.table/issues/5913) : Add support for classed conditions in internal messaging functions like stopf(), allowing for more structured error handling within the package.
+- [6702](https://github.com/Rdatatable/data.table/issues/6702) : Refactor setDT and := to consolidate code related to assigning data.table objects, potentially improving maintainability and consistency.
 
 ### 2. Improving Consistency and Reliability
 Addressing inconsistencies and bugs is crucial for a reliable user experience. This section targets issues that refine existing behaviors and fix specific problems.
 
 **Consistent Behavior:**
-- #6219 : Ensure function names are preserved within data.table calls when using the by argument , maintaining clarity in complex operations.
-- #5034 : Align the printing behavior of truncated column lists with user expectations by enabling wrapping when trunc.cols=TRUE .
-- #4259 : Standardize date/time handling by adding a POSIXlt method for IDate, improving interoperability.
+- [#6219](https://github.com/Rdatatable/data.table/issues/6219) : Ensure function names are preserved within data.table calls when using the by argument , maintaining clarity in complex operations.
+- [#5034](https://github.com/Rdatatable/data.table/issues/5034) : Align the printing behavior of truncated column lists with user expectations by enabling wrapping when trunc.cols=TRUE .
+- [#4259](https://github.com/Rdatatable/data.table/issues/4259) : Standardize date/time handling by adding a POSIXlt method for IDate, improving interoperability.
 
 **Bug Fixes & Error Handling:**
-- #5609 : Resolve errors that occur when the object assigned on the right-hand side of := shares a name with an existing column .
-- #5981 : Address printing issues for data.tables containing specific column types, such as rvar objects from the posterior package. 
-- #904 : Enhance usability within environments like knitr by improving caching behavior for := assignments.
+- [#5609](https://github.com/Rdatatable/data.table/issues/5609) : Resolve errors that occur when the object assigned on the right-hand side of := shares a name with an existing column .
+- [#5981](https://github.com/Rdatatable/data.table/issues/5981) : Address printing issues for data.tables containing specific column types, such as rvar objects from the posterior package. 
+- [#904](https://github.com/Rdatatable/data.table/issues/904) : Enhance usability within environments like knitr by improving caching behavior for := assignments.
 
 ### 3. Enhancing User Experience through Documentation and Clarity
 Clear documentation and informative error messages are vital for usability. This group focuses on making data.table easier to learn and troubleshoot.
 
 **Clearer Error Messages & Warnings:**
-- #6641 : Make merge() error messages less confusing by ensuring the 'x' and 'i' prefixes consistently refer to the correct input tables.
-- #5829 : Improve error reporting or guidance when the right-hand side of := is a function or closure, helping users debug their code.
+- [#6641](https://github.com/Rdatatable/data.table/issues/6641) : Make merge() error messages less confusing by ensuring the 'x' and 'i' prefixes consistently refer to the correct input tables.
+- [#5829](https://github.com/Rdatatable/data.table/issues/5829) : Improve error reporting or guidance when the right-hand side of := is a function or closure, helping users debug their code.
 
 **Documentation Improvements:**
-- #2487 : Explicitly document the behavior of first() with named vectors compared to standard subsetting x[1].
-- #5321 : Clarify the differences in indexing behavior between setindex and setkey for non-character columns.
-- #2002 : Clarify that first(x) does not always return the same result as x[1] in documentation.
-- #6720 : Update documentation to provide a comprehensive, current list of data.table options and their values.
-- #6638 : Enhance the project's website build process by extending md-lint to check for correctly formatted vignette() references.
+- [#2487](https://github.com/Rdatatable/data.table/issues/2487) : Explicitly document the behavior of first() with named vectors compared to standard subsetting x[1].
+- [#5321](https://github.com/Rdatatable/data.table/issues/5321) : Clarify the differences in indexing behavior between setindex and setkey for non-character columns.
+- [#2002](https://github.com/Rdatatable/data.table/issues/2002) : Clarify that first(x) does not always return the same result as x[1] in documentation.
+- [#6720](https://github.com/Rdatatable/data.table/issues/6720) : Update documentation to provide a comprehensive, current list of data.table options and their values.
+- [#6638](https://github.com/Rdatatable/data.table/issues/6638) : Enhance the project's website build process by extending md-lint to check for correctly formatted vignette() references.
 
 ### My plans to get it done
 I plan a structured approach focused on quality and collaboration:
@@ -169,12 +167,13 @@ I plan a structured approach focused on quality and collaboration:
 **Preventing Regressions & Side Effects:** Ensuring that changes made to address one issue do not unintentionally break other functionality elsewhere in the package. 
 - **Mitigation:** Comprehensive local testing covering the full test suite, submitting small changes via PRs, and relying on thorough code review.
 
-**Accurate Time Estimation & Adaptation:** Realistically estimating the effort for complex tasks and effectively managing the schedule, especially if unforeseen difficulties arise. - **Mitigation:** Breaking down large tasks, tracking progress closely, and communicating proactively with mentors to adjust plans if needed, as outlined in the contingency plan.
+**Accurate Time Estimation & Adaptation:** Realistically estimating the effort for complex tasks and effectively managing the schedule, especially if unforeseen difficulties arise.
+- **Mitigation:** Breaking down large tasks, tracking progress closely, and communicating proactively with mentors to adjust plans if needed, as outlined in the contingency plan.
 
 
 #### To outline my approach to resolving issues, I have developed a well-structured plan that addresses each category, including the top user requests, enhancements, feature requests, and documentation improvements.
 
-## Issue #1162: When will sep2 in fread be implemented?
+## Issue [#1162](https://github.com/Rdatatable/data.table/issues/1162): When will sep2 in fread be implemented?
 
 ### 1. Problem Description
 
@@ -297,7 +296,7 @@ Simulated results for 1M rows:
 This proposal merges speed (via tstrsplit's C backend) with simplicity (no C code changes) to solve a common data-ingestion pain point. By focusing on R-level optimizations, it balances innovation with maintainability
 
 
-## ISSUE #5415 Feature Request: fread should raise an error instead of a warning when reading a gzipped file that does not fit in temporary storage
+## ISSUE [#5415](https://github.com/Rdatatable/data.table/issues/5415) Feature Request: fread should raise an error instead of a warning when reading a gzipped file that does not fit in temporary storage
 
 ### Enhancing fread Error Handling for Truncated Gzipped Files
 
@@ -366,7 +365,7 @@ fread <- function(..., truncate.error = TRUE) {
 #### Why This Approach Feels Right
 It's robust because it captures the actual failure signal from the decompression tool. It doesn't rely on guesswork about file sizes and carries minimal overhead. Most importantly, it prevents cryptic downstream errors by clearly signaling when data is incomplete, helping users quickly diagnose storage or corruption issues.
 
-## ISSUE #5034: print.data.table with trunc.cols=TRUE doesn’t wrap the truncated column name list
+## ISSUE [#5034](https://github.com/Rdatatable/data.table/issues/5034): print.data.table with trunc.cols=TRUE doesn’t wrap the truncated column name list
 
 ### Enhancing data.table’s Print Method with Wrapped Truncated Column Messages
 
@@ -426,7 +425,7 @@ if (ncols_rem > 0L) {
 This enhancement aligns data.table’s print output with user expectations, bolstering its utility in pipelines requiring strict formatting (e.g., Bioconductor). It demonstrates data.table’s commitment to polish and extensibility.
 
 
-## Issue Addressed: first()/last() Unexpectedly Drop Vector Names (Issue #2487)
+## Issue Addressed: first()/last() Unexpectedly Drop Vector Names (Issue [#2487](https://github.com/Rdatatable/data.table/issues/2487))
 
 ### The Core Problem
 When you use `first(my_vector)` or `last(my_vector)` on a vector that has names (e.g., `c(A=1, B=2)`), the function returns just the value (`1`) and forgets the name (`A`). 
@@ -468,14 +467,14 @@ This ensures data.table users understand exactly how `first()` and `last()` hand
 
 ## Timeline
 
-**General Approach:** The project will begin with foundational tasks, primarily documentation and simpler consistency fixes, to build familiarity with the codebase and contribution workflow. This will be followed by tackling a significant feature request (#1162). The latter half will focus on implementing other enhancements and features, ensuring thorough testing and documentation throughout. Flexibility will be maintained to adapt to mentor feedback and potential shifts in priority.
+**General Approach:** The project will begin with foundational tasks, primarily documentation and simpler consistency fixes, to build familiarity with the codebase and contribution workflow. This will be followed by tackling a significant feature request ([#1162](https://github.com/Rdatatable/data.table/issues/1162)). The latter half will focus on implementing other enhancements and features, ensuring thorough testing and documentation throughout. Flexibility will be maintained to adapt to mentor feedback and potential shifts in priority.
 
-### Phase 1: Foundation Building and Core Feature Implementation (Weeks 1–6)
+### Phase 1: Foundation Building and Core Feature Implementation (Weeks1–6)
 
 ### Week 0: Community Bonding Period (Before official coding starts)
 **Objective:** Integrate with the data.table community and finalize project scope.  
 **Activities:**  
-- Engage with mentors to refine the project plan, discuss implementation strategies for key issues (especially #1162), and clarify expectations.      
+- Engage with mentors to refine the project plan, discuss implementation strategies for key issues (especially [#1162](https://github.com/Rdatatable/data.table/issues/1162)), and clarify expectations.      
 - Begin exploring the source code relevant to the initial set of documentation/simpler issues.  
 - Actively follow discussions on GitHub issues and stackoverfolw(if needed) to understand ongoing development and community priorities.
 
@@ -484,23 +483,23 @@ This ensures data.table users understand exactly how `first()` and `last()` hand
 
 #### Week 1 Activities:
 - Tackle initial documentation issues:  
-  - Clarify merge() error message prefixes (#6641).  
-  - Improve error reporting for := with closures/functions (#5829).  
-  - Document first() behavior vs. x[1] (#2487, #2002).  
+  - Clarify merge() error message prefixes ([#6641](https://github.com/Rdatatable/data.table/issues/6641)).  
+  - Improve error reporting for := with closures/functions ([#5829](https://github.com/Rdatatable/data.table/issues/5829)).  
+  - Document first() behavior vs. x[1] ([#2487](https://github.com/Rdatatable/data.table/issues/2487), [#2002](https://github.com/Rdatatable/data.table/issues/2002)).  
   - Analyze and implement fix for wrapping truncated column names in print() (#5034).  
 - Submit initial Pull Requests (PRs) for these issues.
-- Start analyzing code related to IDate/POSIXlt (#4259).
+- Start analyzing code related to IDate/POSIXlt ([#4259](https://github.com/Rdatatable/data.table/issues/4259)).
 
 ### Week 2 Activities:
 - Address feedback on initial PRs and refine implementations.  
 - Continue with documentation tasks:  
-  - Document setindex vs. setkey differences (#5321 - Part 1).  
-  - Document env argument usage (#5321 - Part 2).  
-  - Update list of data.table options (#6720).  
-- Implement IDate/POSIXlt method (#4259) and associated tests.   
+  - Document setindex vs. setkey differences ([#5321](https://github.com/Rdatatable/data.table/issues/1162) - Part 1).  
+  - Document env argument usage ([#5321](https://github.com/Rdatatable/data.table/issues/5321) - Part 2).  
+  - Update list of data.table options ([#6720](https://github.com/Rdatatable/data.table/issues/6720)).  
+- Implement IDate/POSIXlt method ([#4259](https://github.com/Rdatatable/data.table/issues/4259)) and associated tests.   
 - Submit PRs for completed tasks.
 
-### Week 3–5: Major Feature Implementation (fread sep2 – #1162)
+### Week 3–5: Major Feature Implementation (fread sep2 – [#1162](https://github.com/Rdatatable/data.table/issues/1162))
 **Objective:** Implement the highly requested sep2 functionality in fread. This is expected to be the most complex task.
 
 ### Week 3 Activities:
@@ -512,7 +511,7 @@ This ensures data.table users understand exactly how `first()` and `last()` hand
 - Continue C implementation for sep2, focusing on robustness and efficiency.  
 - Implement the R wrapper changes in fread() to accept and handle the new sep2 argument.  
 - Expand test coverage significantly, including various combinations of separators, quotes, file types, and potential conflicts.  
-- Address any feedback received on PRs from Weeks 1–2.
+- Address any feedback received on PRs from Weeks1–2.
 - Prepare and submit a comprehensive PR for #1162.
 
 ### Week 5 Activities:
@@ -530,37 +529,37 @@ This ensures data.table users understand exactly how `first()` and `last()` hand
 
 --- End of Phase 1 Evaluation ---
 
-### Phase 2: Enhancements, Bug Fixes, and Finalization (Weeks 7–12)
+### Phase 2: Enhancements, Bug Fixes, and Finalization (Weeks7–12)
 
 ### Week 7–8: Implementing Enhancements and Feature Requests
 **Objective:** Tackle key enhancement and feature request issues.
 
 #### Week 7 Activities:
 - Implement changes based on Phase 1 evaluation feedback.  
-- Implement flatten argument for shift() (#6036) + tests & docs.  
-- Implement rev parameter for tstrsplit() (#6341) + tests & docs.  
-- Analyze and start implementing classed condition support in stopf() (#5913).  
+- Implement flatten argument for shift() ([#6036](https://github.com/Rdatatable/data.table/issues/6036)) + tests & docs.  
+- Implement rev parameter for tstrsplit() ([#6341](https://github.com/Rdatatable/data.table/issues/6341)) + tests & docs.  
+- Analyze and start implementing classed condition support in stopf() ([#5913](https://github.com/Rdatatable/data.table/issues/5913)).  
 - Submit PRs for completed items.
 
 ### Week 8 Activities:
-- Start implementation and testing of classed conditions (#5913).  
-- Implement fread error behavior change for gzip storage limit (#5415) + tests & docs.  
-- Address bug regarding RHS object name matching column name (#5609) + tests.  
-- Begin investigating potential refactoring for setDT/:= (#6702), assess feasibility and discuss approach with mentors.  
+- Start implementation and testing of classed conditions ([#5913](https://github.com/Rdatatable/data.table/issues/5913)).  
+- Implement fread error behavior change for gzip storage limit ([#5415](https://github.com/Rdatatable/data.table/issues/5415)) + tests & docs.  
+- Address bug regarding RHS object name matching column name ([#5609](https://github.com/Rdatatable/data.table/issues/5609)) + tests.  
+- Begin investigating potential refactoring for setDT/:= ([#6702](https://github.com/Rdatatable/data.table/issues/6702)), assess feasibility and discuss approach with mentors.  
 - Submit PRs.
 
 ### Week 9–10: Consistency, Bug Fixes, and Further Enhancements
 **Objective:** Address remaining consistency issues, bugs, and potentially start internal refactoring.
 
 ### Week 9 Activities:
-- Address feedback on PRs submitted in Weeks 7–8. 
-- Ensure function names are preserved when using by (#6219) + tests & docs.  
-- Address printing issue with rvar columns (#5981) + tests. 
-- Improve knitr caching for := (#904) + tests/examples.   
+- Address feedback on PRs submitted in Weeks7–8. 
+- Ensure function names are preserved when using by ([#6219](https://github.com/Rdatatable/data.table/issues/6219)) + tests & docs.  
+- Address printing issue with rvar columns ([#5981](https://github.com/Rdatatable/data.table/issues/5981)) + tests. 
+- Improve knitr caching for := ([#904](https://github.com/Rdatatable/data.table/issues/904)) + tests/examples.   
 
 ### Week 10 Activities:
-- Staert working on #6702.  
-- Enhance website build checks with md-lint for vignette links (#6638).  
+- Staert working on [#6702](https://github.com/Rdatatable/data.table/issues/6702).  
+- Enhance website build checks with md-lint for vignette links ([#6638](https://github.com/Rdatatable/data.table/issues/6638)).  
 - Conduct thorough regression testing across all contributions made so far.  
 - Review and improve documentation for all implemented features and fixes based on self-review and potential early feedback.  
 - Submit any remaining PRs.
@@ -611,11 +610,11 @@ I plan to commit regularly as I complete logical units of work, favoring small, 
 
 ### TEST
 **For test qualification , there we have to merege 1 pr , so below are my Contributions So Far**
-I've already made several contributions to data.table which involve solving bugs , correct error message and documentation. 
-As of now four pull requests successfully merged and I'm actively working on a documentation issue , documennting the behviour explaining how jj argument used over j when j would fail with outer-environment variables in groupingsets() and  making changes as per suggestions from community. 
+I've already made several contributions to data.table which involve solving bugs, correct error message and documentation. 
+As of now four pull requests successfully merged and I'm actively working on a documentation issue, documennting the behviour explaining how jj argument used over j when j would fail with outer-environment variables in groupingsets() and  making changes as per suggestions from community. 
 Here's a quick overview of each merged pull request:
 
-### PR #6816: Fixes Index Printing by adding index info to header
+### PR [#6816](https://github.com/Rdatatable/data.table/pull/6816): Fixes Index Printing by adding index info to header
 
 **Problem description:** This pull request solved a problem where `print.data.table()` would fail when you tried to show indices (using `options(datatable.show.indices = TRUE)`). This happened because the code expected a certain number of columns, but the actual data had a different number.
 Thus the solution involved adjusting the rbind operation to ensure that the number of columns matched the expected vector length.
@@ -644,7 +643,7 @@ setindex(DT, b)
 test(2307, { capture.output(print(DT, class = TRUE, show.indices = TRUE)); TRUE })
 ```
 
-### PR #6865: Ensure consistent Key Handling in as.data.table S3 Methods 
+### PR [#6865](https://github.com/Rdatatable/data.table/pull/6865): Ensure consistent Key Handling in as.data.table S3 Methods 
 
 **Problem description:** The `key()` function wasn't behaving consistently when converting objects to data.table. Specifically, setting a key during conversion (`key(as.data.table(x, key = <key>))`) didn't always work as expected for tibbles or unkeyed data.tables. Also, `key(as.data.table(x))` would sometimes keep the original key when it should have returned `NULL`.
 
@@ -672,7 +671,7 @@ data.table(t = c(3:1,4:5), y = 1:5) %>% as.data.table(key = "t") %>% key() # "t"
 **Impact:** These changes make key handling more predictable for users handling tibbles and keyed data.tables.
 
 
-### PR #6870: Remove partial argument usage
+### PR [#6870](https://github.com/Rdatatable/data.table/pull/6870): Remove partial argument usage
 
 **Problem description:** In Vignettes/Rmd file ,there were some occurences where description of code snippets clearly mention to use complete argument but their code snippets use partial argument and still worked due to partial argument matching. But this created confusion between users to whether use partial argument or full argument.
 
@@ -680,7 +679,7 @@ data.table(t = c(3:1,4:5), y = 1:5) %>% as.data.table(key = "t") %>% key() # "t"
 
 **Impact:** This improves the clarity and consistency of the documentation, making it easier to understand the examples.
 
-### PR #5455: explicitly specify keyword 'on = .NATURAL'
+### PR [#5455](https://github.com/Rdatatable/data.table/pull/5455): explicitly specify keyword 'on = .NATURAL'
 
 **Problem description:** The error message for an unspecified join on an unkeyed data.table incorrectly suggests that sharing column names will perform a natural join, but the keyword on = .NATURAL is actually required.
 
@@ -688,7 +687,7 @@ data.table(t = c(3:1,4:5), y = 1:5) %>% as.data.table(key = "t") %>% key() # "t"
 
 **Impact:** The fix provides accurate guidance in error messages, helping users understand the correct way to perform natural joins, thus improving the usability and clarity of the data.table package.
 
-## Self-Recommendation :
+## Self-Recommendation:
 
 - **Direct Contribution Experience:** Actively contributing to data.table since February with 4 merged PRs (spanning bug fixes, error messages, documentation), giving me hands-on experience with the codebase, C-level optimizations, R internals, workflow, and testing requirements.
 - **Technical Alignment & Proactive Preparation:** My R and C skills and focus on performance directly match data.table's core strengths. I have studied the proposed issues in detail and proactively prepared by benchmarking the key sep2 feature central to my proposal.
