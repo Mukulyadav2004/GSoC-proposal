@@ -52,7 +52,7 @@ You can check my project here: [GitHub link](https://github.com/Mukulyadav2004/f
 - Name: MUKUL KUMAR
 - Postal address: ARMY INSTITUTE OF TECHNOLOGY, PUNE, MAHARASHTRA, 411015 
 - Mobile: +91 8708206446
-- Email(s): mukulyadav6446@gmail.com (primary), mukulkumar_230467@aitpune.edu.in (secondary)
+- Email(s): mukulrao6480@gmail.com (primary), mukulkumar_230467@aitpune.edu.in (secondary)
 
 ## Affiliation
 - Institution: ARMY INSTITUTE OF TECHNOLOGY
